@@ -1,0 +1,145 @@
+/* --- 1. GLOBAL VARIABLES (THEME DARK TECH) --- */
+:root {
+  /* Palette màu chủ đạo */
+  --primary-orange: #ff6600;       /* Cam FPT/Tech */
+  --primary-hover: #e65c00;        /* Cam đậm khi hover */
+  
+  /* Nền và Bề mặt */
+  --bg-body: #050505;              /* Đen sâu (Deep Black) */
+  --bg-surface: #111111;           /* Đen nhạt cho Card/Modal */
+  --bg-input: #0a0a0a;             /* Nền input */
+  
+  /* Màu chữ */
+  --text-main: #ffffff;            /* Trắng tinh */
+  --text-muted: #a1a1aa;           /* Xám sáng (Zinc 400) */
+  --text-dark: #52525b;            /* Xám tối */
+
+  /* Viền và Bóng đổ */
+  --border-color: #27272a;         /* Viền xám tối */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(255, 102, 0, 0.15); /* Glow cam nhẹ */
+
+  /* Kích thước */
+  --navbar-height: 70px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+/* --- 2. CSS RESET & BASE --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Tránh thanh cuộn ngang không mong muốn */
+}
+
+/* --- 3. TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-orange);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* --- 4. UTILITIES --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-orange { color: var(--primary-orange) !important; }
+.text-center { text-align: center; }
+
+/* Custom Scrollbar (Thanh cuộn đẹp) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-body); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-orange); 
+}
+
+/* --- 5. GLOBAL INPUTS & FORMS --- */
+input, select, textarea {
+  font-family: inherit;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* --- 6. GLOBAL ANIMATIONS (TRANSITIONS) --- */
+
+/* Fade Transition (Dùng cho Router View) */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Zoom Transition (Dùng cho Modal) */
+.zoom-enter-active,
+.zoom-leave-active {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.zoom-enter-from,
+.zoom-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
+}
