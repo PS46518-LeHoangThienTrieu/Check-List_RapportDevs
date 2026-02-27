@@ -87,9 +87,8 @@ onUnmounted(() => {
 });
 
 const logout = () => {
-  localStorage.removeItem('user_session');
-  user.value = null;
-  router.push('/login');
+ localStorage.removeItem('user_session')
+  this.$router.replace({ name: 'home' })
 };
 </script>
 

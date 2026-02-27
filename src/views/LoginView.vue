@@ -61,7 +61,8 @@ const handleAuth = () => {
         loginAt: new Date().toISOString()
       };
 
-      localStorage.setItem('user_session', JSON.stringify(userData));
+      localStorage.setItem('user_session', JSON.stringify(user))
+      this.$router.replace({ name: 'home' })
       alert('Đăng nhập thành công!');
       window.location.href = '/'; 
     } else {
