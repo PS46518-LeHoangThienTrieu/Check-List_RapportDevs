@@ -13,38 +13,38 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView },
-    { path: '/login', name: 'login', component: LoginView },
-    { path: '/about', name: 'about', component: AboutView },
-    { path: '/contact', name: 'contact', component: ContactView },
+    { path: '#/login', name: 'login', component: LoginView },
+    { path: '#/about', name: 'about', component: AboutView },
+    { path: '#/contact', name: 'contact', component: ContactView },
 
     {
-      path: '/profile',
+      path: '#/profile',
       name: 'profile',
       component: ProfileView,
       meta: { requiresAuth: true }
     },
 
     {
-      path: '/skills',
+      path: '#/skills',
       name: 'skills',
       component: SkillView,
       meta: { requiresAuth: true }
     },
     {
-      path: '/skills/:id',
+      path: '#/skills/:id',
       name: 'subject-detail',
       component: SubjectDetailView,
       props: true,
       meta: { requiresAuth: true }
     },
     {
-      path: '/blog',
+      path: '#/blog',
       name: 'blog',
       component: BlogView,
       meta: { requiresAuth: true }
     },
     {
-      path: '/blog/:id',
+      path: '#/blog/:id',
       name: 'post-detail',
       component: PostDetailView,
       props: true,
